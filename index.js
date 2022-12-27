@@ -32,6 +32,7 @@ const kreirajKljuc=(duzina,inicV)=>{
    // console.log(kljuc);
    // return kljuc;
    let kljuc='';
+   let inicV=inicV.toLowerCase();
    while(kljuc.length<duzina){
       kljuc+=inicV;
    }
