@@ -1,4 +1,4 @@
-const alfabet='abcdefghijklmnopqrstuvwxyz';
+const alfabet='abcdefghijklmnopqrstuvwxyz ';
 
 let input=document.querySelector("#in");
 let output=document.querySelector("#out");
@@ -47,13 +47,13 @@ const sifruj = (poruka,inicV) => {
    for(i=0;i<poruka.length;i++){
       //.charat[],indexOf
       let slovo=poruka[i];
-      if(slovo==" "){
+      if(slovo=="PROVERAZASPACE"){
          sifrat+=" ";
       }
       else{
          let indexSlova=alfabet.indexOf(slovo);
          let indexKljuca=alfabet.indexOf(kljuc[i]);
-         let sifrovanindex=(indexSlova+indexKljuca)%26;
+         let sifrovanindex=(indexSlova+indexKljuca)%27;
          console.log(indexSlova,indexKljuca,sifrovanindex);
          sifrat+=alfabet.charAt(sifrovanindex);
       }
@@ -69,16 +69,16 @@ const desifruj=(sifrat,inicV)=>{
    for(i=0;i<sifrat.length;i++){
       //.charat[],indexOf
       let slovo=sifrat[i];
-      if(slovo==" "){
+      if(slovo=="PROVERAZASPACE"){
          OT+=" ";
       }
       else{
          let indexSlova=alfabet.indexOf(slovo);
          let indexKljuca=alfabet.indexOf(kljuc[i]);
          if(indexSlova-indexKljuca>=0){
-            rezultat=(indexSlova-indexKljuca)%26;
+            rezultat=(indexSlova-indexKljuca)%27;
          }else{
-            rezultat=(26-(-(indexSlova-indexKljuca)))%26;
+            rezultat=(27-(-(indexSlova-indexKljuca)))%27;
          }
          let desifrovaniIndeks=rezultat;
             //console.log(indexSlova,indexKljuca,desifrovaniIndeks);
